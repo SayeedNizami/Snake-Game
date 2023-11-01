@@ -4,8 +4,7 @@
 }
 
 .body{
-    /* background: url("bg.jpg");  */
-     background-color: aqua;
+     background-color:aliceblue;
     min-height: 100vh;
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
