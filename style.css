@@ -4,7 +4,7 @@
 }
 
 .body{
-     background-color:aliceblue;
+    background-color: rgb(173, 221, 103);
     min-height: 100vh;
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
@@ -35,16 +35,16 @@
     background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
     width: 90vmin;
     height: 92vmin;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: grid;
     grid-template-rows: repeat(18, 1fr);
     grid-template-columns: repeat(18, 1fr);
-    box-shadow: 0px 0px 7px 7px rgb(78, 116, 6);
+    box-shadow: 0px 0px 7px 7px rgb(157, 189, 105);
 }
 
 .head{
     background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
-    border: 2px solid rgb(34, 4, 34); 
+    /* border: 2px solid rgb(34, 4, 34);  */
     transform: scale(1.02);
     border-radius: 9px;
 }
@@ -57,7 +57,7 @@
 
 .food{
     background: linear-gradient(red, purple);
-    border: .25vmin solid black;
+    /* border: .25vmin solid black; */
     border-radius: 8px;
 }
 .creater{
