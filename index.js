@@ -1,4 +1,3 @@
-// Game Constants & Variables
 let inputDir = {x: 0, y: 0}; 
 const foodSound = new Audio('food.mp3');
 const gameOverSound = new Audio('gameover.mp3');
@@ -16,7 +15,6 @@ food = {x: 6, y: 7};
 // Game Functions
 function main(ctime) {
     window.requestAnimationFrame(main);
-    // console.log(ctime)
     if((ctime - lastPaintTime)/1000 < 1/speed){
         return;
     }
@@ -25,13 +23,12 @@ function main(ctime) {
 }
 
 function isCollide(snake) {
-    // If you bump into yourself 
+    // itself bump
     for (let i = 1; i < snakeArr.length; i++) {
         if(snake[i].x === snake[0].x && snake[i].y === snake[0].y){
             return true;
         }
-    }
-    // If you bump into the wall
+    } //wall bump
     if(snake[0].x >= 18 || snake[0].x <=0 || snake[0].y >= 18 || snake[0].y <=0){
         return true;
     }
@@ -40,7 +37,7 @@ function isCollide(snake) {
 }
 
 function gameEngine(){
-    // Part 1: Updating the snake array & Food
+    // Updating the snake array & Food
     if(isCollide(snakeArr)){
         gameOverSound.play();
         musicSound.pause();
@@ -67,7 +64,7 @@ function gameEngine(){
         food = {x: Math.round(a + (b-a)* Math.random()), y: Math.round(a + (b-a)* Math.random())}
     }
 
-    // Moving the snake
+    // Sanke moving
     for (let i = snakeArr.length - 2; i>=0; i--) { 
         snakeArr[i+1] = {...snakeArr[i]};
     }
@@ -76,7 +73,6 @@ function gameEngine(){
     snakeArr[0].y += inputDir.y;
 
     // Display the snake and Food
-    // Display the snake
     board.innerHTML = "";
     snakeArr.forEach((e, index)=>{
         snakeElement = document.createElement('div');
@@ -91,7 +87,6 @@ function gameEngine(){
         }
         board.appendChild(snakeElement);
     });
-    // Display the food
     foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.y;
     foodElement.style.gridColumnStart = food.x;
@@ -101,8 +96,7 @@ function gameEngine(){
 
 }
 
-
-// Main logic starts here
+//high score update
 musicSound.play();
 let hiscore = localStorage.getItem("hiscore");
 if(hiscore === null){
@@ -113,10 +107,10 @@ else{
     hiscoreval = JSON.parse(hiscore);
     hiscoreBox.innerHTML = "HiScore: " + hiscore;
 }
-
+//key press
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e =>{
-    inputDir = {x: 0, y: 1} // Start the game
+    inputDir = {x: 0, y: 1} 
     moveSound.play();
     switch (e.key) {
         case "ArrowUp":
